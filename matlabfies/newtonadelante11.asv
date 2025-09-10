@@ -1,0 +1,18 @@
+function y=newtonadelante11
+x=[1 1.2 1.4 1.6 1.8];y=[2 2.3 2.6 2.4 2.1];
+u=[];v=[];w=[];n=length(x);t=y(1);w=y;
+
+for i=1:(n-1)
+    u(i)=t;
+    for j=1:(n-i)
+        v(j)=w(j+1)-w(j);
+    end
+    t=v(1);w=v;
+end
+h=x(2)-x(1);x0=1.23;t=(1.23-1)/h;
+su=u(1);p1=1;t1=1;
+for i=2:(n-1)
+    t1=t1*(t-i-2);
+    su=su+u(i)*t1/factorial(i)
+    p1=p1*i
+end
