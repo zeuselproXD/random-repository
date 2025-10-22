@@ -1,7 +1,7 @@
 A=[1 3 7 9;2 0 4 3;1 1 1 1;2 3 1 4]
-n=size(A);n=n(1);
+n=size(A);n=n(1);ac=1;
 for i=1:n
-  p=A(i,i);
+  p=A(i,i);ac=ac*p
   for j=i+1:n
     k=A(j,i);
     for l=i:n
@@ -10,3 +10,4 @@ for i=1:n
   endfor
 endfor
 A
+ac
